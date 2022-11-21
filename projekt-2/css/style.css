@@ -8,6 +8,26 @@ body {
     font-family: 'Merriweather Sans', sans-serif;;
 }
 
+.bg-light{
+    background-color: #f4f4f4;
+    color: #333333;
+}
+
+list {
+    margin: 0.5rem 0;
+    list-style: none;
+}
+
+.list li {
+    padding: 0.5rem 0;
+    border-bottom: #aaaaaa dotted 1px;
+}
+
+.bg-dark{
+    background-color: #333333;
+    color: #f4f4f4;
+}
+
 .text-primary {
     color: red;
 }
@@ -27,19 +47,20 @@ body {
     font-size: 2rem;
     margin-bottom: 0.75rem;
     line-height: 1.1;
+    text-align: center;
 }
 
-.py-1 {
-    padding: 1.5rem 0;
-}
+.py-1 {padding: 1.5rem 0;}
+.py-2 {padding: 2.5rem 0;}
+.py-3 {padding: 3.5rem 0;}
 
-.py-2 {
-    padding: 2.5rem 0;
-}
+.p-1{padding: 1.5rem}
+.p-2{padding: 2.5rem}
+.p-3{padding: 3.5rem}
 
-.py-3 {
-    padding: 3.5rem 0;
-}
+.m-1{margin: 1.5rem}
+.m-2{margin: 2.5rem}
+.m-3{margin: 3.5rem}
 
 .l-heading {
     font-size: 4rem;
@@ -96,7 +117,7 @@ a {
     align-items: center;
     position: sticky;
     position: -webkit-sticky;
-    top: 0px;
+    top: 0;
 }
 
 #navbar a {
@@ -164,10 +185,25 @@ a {
     border-radius: 50%;
 }
 
-#Project {
+#project {
     display: flex;
 }
 
-#Project .Project-img {
-    background: url("");
+#project div {
+    flex: 1;
+}
+
+#project .project-img {
+    background: url("../img/team_fotka.jfit") no-repeat center center/cover;
+}
+
+#images .items {
+    display: flex;
+    justify-content: space-between;
+}
+
+#images .items img {
+    display: block;
+    margin: auto;
+    width: 80%;
 }
