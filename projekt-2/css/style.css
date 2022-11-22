@@ -13,7 +13,7 @@ body {
     color: #333333;
 }
 
-list {
+.list {
     margin: 0.5rem 0;
     list-style: none;
 }
