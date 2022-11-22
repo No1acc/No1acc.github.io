@@ -244,3 +244,11 @@ a {
     display: flex;
     height: 150px;
 }
+
+.text-secondary {
+    color: brown;
+}
+
+.text-third {
+    color: whitesmoke;
+}
