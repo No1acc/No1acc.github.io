@@ -17,7 +17,30 @@
 @media(max-width: 500px) {
     #navbar {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    #navbar #hambac {
+        display: block;
+        align-self: center;
+    }
+
+    #navbar ul {
+        flex-direction: column;
+        align-items: stretch;
+        display: none;
+        align-self: center;
+    }
+
+    #navbar ul li {
+        padding: 0.5rem;
+        border-bottom: #f4f4f4 1px dotted;
+    }
+
+    #navbar ul li:first-child {
+        margin-top: 0.8rem;
+        border-top: #f4f4f4 1px dotted;
     }
 
     #navbar #logo {
@@ -49,7 +72,6 @@
         flex-direction: column;
     }
 }
-
 @media screen and (max-height: 568px) {
     .l-heading {
         font-size: 2rem;
@@ -67,4 +89,4 @@
     #navbar ul li a {
         padding: 0 1rem;
     }
-}
+    }

@@ -1,14 +1,21 @@
+//smooth scrolling
+
  $('#navbar a, .btn').on('click', function (event) {
         if (this.hash !== '') {
             event.preventDefault();
             const hash = this.hash;
             $('html, body').animate(
                 {
-                    scrollTop: $(hash).offset().top - 100
+                    scrollTop: $(hash).offset().top - 260
                 }, 800
             )
         }
     })
+    // Menu Toggle//
+    $('#navbar #hambac').click(function() {
+    $('#navbar ul').slideToggle("slow");
+    });
+
 
 
     var nav_sections = $('section');
