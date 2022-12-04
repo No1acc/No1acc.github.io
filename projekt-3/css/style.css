@@ -113,7 +113,7 @@ main .main-content form .srch {
 }
 
 main .main-content form .srch input {
-    width: 100%;
+    width: 150%;
     background-color: lightgrey;
     border: 1px solid #5f6368;
     height: 44px;
@@ -122,6 +122,7 @@ main .main-content form .srch input {
     color: black;
     text-indent: 5%;
 }
+
 main .main-content form .srch input:hover {
     border: 1px solid white;
     color: black;
