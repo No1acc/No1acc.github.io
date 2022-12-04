@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <title>Google-Advanced Search</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<title>Google-Advanced Search</title>
+<body>
+<nav id="navbar">
+    <div id="logo"><a href="advanced.html"></a>
+    </div>
+    <ul class="lead">
+        <li><a href="advanced.html">Advanced-Search</a></li>
+        <li><a href="clasic.html">Clasic-Search</a></li>
+        <li><a href="image.html">Img-Search</a></li>
+    </ul>
+</nav>
+<main id="main">
+    <div class="main-content">
+        <div class="title">
+            <h1 class="l-heading">Google Search</h1>
+            <p class="lead">Advanced Search</p>
+        </div>
+        <div class="srch">
+            <p>Find pages with...</p>
+        </div>
+        <form class="pad" action="https://www.google.com/search" name="f">
+            <div class="srch pad">
+                <p> all these words:</p>
+                <label>
+                    <input type="text" name="as_q" placeholder="Type here:" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                </label>
+            </div>
+            <div class="srch pad">
+                <p>this exact word or phrase:</p>
+                <label>
+                    <input type="text" name="as_epq" placeholder="Type here:" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                </label>
+            </div>
+            <div class="srch pad">
+                <p>any of these words:</p>
+                <label>
+                    <input type="text" name="as_oq" placeholder="Type here:" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                </label>
+            </div>
+            <div class="srch pad">
+                <p>none of these words:</p>
+                <label>
+                    <input type="text" name="as_eq" placeholder="Type here:" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                </label>
+            </div>
+            <div>
+                <span class="btn btn-dark"><input type="submit" value="Search" name="btnK"></span>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </form>
+    </div>
+</main>
+</body>
+</html>
