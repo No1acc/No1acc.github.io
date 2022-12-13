@@ -151,6 +151,6 @@ main .main-content form .srch i {
     color: white;
 }
 
-.pad {
-    padding: 1rem;
+.black {
+    background-color: gray;
 }

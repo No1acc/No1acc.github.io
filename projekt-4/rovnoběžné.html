@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Vektory</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Vyplním si hodnoty, ať to nemusím pokaždé dělat
+            document.querySelector('#u1').value = 1;
+            document.querySelector('#u2').value = 3;
+            document.querySelector('#v1').value = -1;
+            document.querySelector('#v2').value = -3;
+
+            // Jakmile provedu submit (odeslání) spustím funkci
+            document.querySelector('form').onsubmit = () => {
+
+                // Načtu hodnoty do proměnných, ať s nimi může počítač pracovat
+                let u1 = document.querySelector('#u1').value;
+                let u2 = document.querySelector('#u2').value;
+                let v1 = document.querySelector('#v1').value;
+                let v2 = document.querySelector('#v2').value;
+
+                // Výpočet
+                let k1 = ((v1 / u1));
+                let k2 = ((v2 / u2));
+
+                document.querySelector("#k1").innerHTML = `K1= (${k1})`;
+
+                if (k1 === k2) {
+                    document.querySelector("#Ano").innerHTML = `Jsou Rovnoběžné`;
+                } else if ((u1 === v1 * (-1) && u2 === v2) || (u1 === v1 && u2 === v2 * (-1))) {
+                    document.querySelector("#Kolme").innerHTML = `Jsou Kolmé`;
+                } else {
+                    document.querySelector("#Ne").innerHTML = `Nejsou Rovnoběžné`;
+                }
+                return false
+            }
+
+
+        });
+
+
+    </script>
+    <form>
+        A:
+        <input type="number"
+               name="u1"
+               id="u1"
+               placeholder="u1">
+        <input type="number"
+               name="u2"
+               id="u2"
+               placeholder="u2"><br>
+        B:
+        <input type="number"
+               name="v1"
+               id="v1"
+               placeholder="v1">
+        <input type="number"
+               name="v2"
+               id="v2"
+               placeholder="v2"><br>
+        <input type="submit"
+               value="Vypočítat" id="submit">
+    </form>
+
+    <div id="k1"></div>
+    <div id="k2"></div>
+    <div id="Ano"></div>
+    <div id="Ne"></div>
+    <div id="Kolme"></div>
+
+</head>
+</html>
