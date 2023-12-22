@@ -68,7 +68,7 @@ header {
 
 /* Styly pro mobilní menu */
 .mobile-menu-icon-container {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
 }
@@ -86,7 +86,7 @@ header {
 }
 
 .mobile-menu a {
-    display: block;
+    display: none;
     padding: 10px;
     color: #fff;
     text-decoration: none;
