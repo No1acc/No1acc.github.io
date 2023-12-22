@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Nastavení kódování a viewportu pro responzivitu -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domovská stránka</title>
+    <!-- Odkaz na externí styly definované v souboru style.css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: lightgray">
+
+<!-- Hlavička stránky obsahující logo, navigační tlačítka a mobilní menu -->
+<header>
+    <!-- Logo a odkazy na různé sekce webu -->
+    <div class="logo">
+        <a href="Home.html">
+            <img src="obrázky/Logo%20-%20Bílá.png" alt="Logo">
+        </a>
+    </div>
+    <div class="button"><a href="Home.html">Home</a></div>
+    <div class="button"><a href="O-Nás.html">O Nás</a></div>
+    <div class="button"><a href="Co-Nabizime.html">Co Nabízíme</a></div>
+    <div class="button active"><a href="Galerie.html">Galerie</a></div>
+    <div class="button"><a href="Kontakt.html">Kontakt</a></div>
+
+    <!-- Ikona pro ovládání mobilního menu -->
+    <div class="mobile-menu-icon-container">
+        <div class="mobile-menu-icon" onclick="toggleMobileMenu()">☰</div>
+    </div>
+    <!-- Mobilní menu pro malé obrazovky -->
+    <div class="mobile-menu">
+        <a href="Home.html">Home</a>
+        <a href="O-Nás.html">O Nás</a>
+        <a href="Co-Nabizime.html">Co Nabízíme</a>
+        <div class="active"><a href="Galerie.html">Galerie</a></div>
+        <a href="Kontakt.html">Kontakt</a>
+    </div>
+</header>
+
+<!-- Skript pro ovládání mobilního menu -->
+<script>
+    function toggleMobileMenu() {
+        // Získání referencí na prvky mobilního menu
+        var mobileMenu = document.querySelector('.mobile-menu');
+        // Zobrazení nebo skrytí mobilního menu na základě aktuálního stavu
+        mobileMenu.style.display = (mobileMenu.style.display === 'block') ? 'none' : 'block';
+    }
+
+    // Přidání posluchače událostí pro zavírání mobilního menu
+    document.addEventListener('click', function(event) {
+        var mobileMenu = document.querySelector('.mobile-menu');
+        var mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+
+        // Zavření mobilního menu, pokud uživatel klikne mimo ikonu nebo menu
+        if (event.target !== mobileMenu && event.target !== mobileMenuIcon) {
+            mobileMenu.style.display = 'none';
+        }
+    });
+</script>
+
+<!-- Sekce galerie s popisem a navigací mezi obrázky -->
+<section class="gallery">
+    <!-- Nadpis sekce -->
+    <h1 style="text-align: center; padding: 1em 0 0 0; color: black; font-size: 4em ;margin-top: 2em">Galerie</h1>
+    <!-- Popisek sekce -->
+    <p style="padding: 2em 0 3em 0;">
+        Zde naleznete poutavou galerii fotografií naší knihovny.
+        Každý snímek zachycuje harmonii slov, klid odpočívadla
+        a pestré knižní sbírky. Prohlédněte si náš literární svět online!
+    </p>
+    <!-- Hlavní obrázek s navigačními tlačítky -->
+    <div class="main-image">
+        <img id="mainImage" src="obrázky/slide3.jpg" alt="Main Photo">
+        <div class="navigation-buttons">
+            <!-- Tlačítko pro přechod na předchozí obrázek -->
+            <button onclick="changeImage(-1)" class="nav-button left">❮</button>
+            <!-- Tlačítko pro přechod na následující obrázek -->
+            <button onclick="changeImage(1)" class="nav-button right">❯</button>
+        </div>
+    </div>
+        <!-- Náhledy fotografií s možností změny hlavního obrázku -->
+        <div class="thumbnail-list">
+            <!-- Náhledy s volání funkcí pro změnu hlavního obrázku -->
+            <img src="obrázky/čtverec.jpg" alt="Thumbnail 1" onclick="changeImageByThumbnail('obrázky/čtverec.jpg')">
+            <img src="obrázky/obdelník.jpg" alt="Thumbnail 2" onclick="changeImageByThumbnail('obrázky/obdelník.jpg')">
+            <img src="obrázky/slide5.jpg" alt="Thumbnail 3" onclick="changeImageByThumbnail('obrázky/slide5.jpg')">
+            <img src="obrázky/slide4.jpg" alt="Thumbnail 4" onclick="changeImageByThumbnail('obrázky/slide4.jpg')">
+            <img src="obrázky/slide3.jpg" alt="Thumbnail 5" onclick="changeImageByThumbnail('obrázky/slide3.jpg')">
+            <img src="obrázky/portfolio-img3.jpg" alt="Thumbnail 6" onclick="changeImageByThumbnail('obrázky/portfolio-img3.jpg')">
+            <img src="obrázky/portfolio-img2.jpg" alt="Thumbnail 7" onclick="changeImageByThumbnail('obrázky/portfolio-img2.jpg')">
+        </div>
+</section>
+
+<!-- Skript pro změnu obrázků v galerii -->
+<script>
+    // Získání referencí na hlavní obrázek a seznam obrázků
+    const mainImage = document.getElementById('mainImage');
+    const images = [
+        'obrázky/čtverec.jpg',
+        'obrázky/obdelník.jpg',
+        'obrázky/slide5.jpg',
+        'obrázky/slide4.jpg',
+        'obrázky/slide3.jpg',
+        'obrázky/portfolio-img3.jpg',
+        'obrázky/portfolio-img2.jpg',
+    ];
+    // Index aktuálně zobrazeného obrázku
+    let currentImageIndex = 0;
+
+    // Funkce pro změnu hlavního obrázku na základě posunutí o určitý offset
+    function changeImage(offset) {
+        // Zajištění smyčky mezi obrázky
+        currentImageIndex = (currentImageIndex + offset + images.length) % images.length;
+        // Nastavení zdroje hlavního obrázku
+        mainImage.src = images[currentImageIndex];
+    }
+
+    // Funkce pro změnu hlavního obrázku na základě kliknutí na náhled
+    function changeImageByThumbnail(newImage) {
+        // Získání indexu obrázku
+        const index = images.indexOf(newImage);
+        // Změna hlavního obrázku, pokud je nalezen index
+        if (index !== -1) {
+            currentImageIndex = index;
+            mainImage.src = newImage;
+        }
+    }
+</script>
+
+<!-- Patička stránky s odkazy na sociální média -->
+<footer>
+    <!-- Textová část patičky -->
+    <p>Naše sociální média</p>
+    <!-- Loga odkazů na sociální média -->
+    <div class="social-media-logos">
+        <a href="https://www.youtube.com/" target="_blank">
+            <img src="obrázky/youtube.png" alt="YouTube logo">
+        </a>
+        <a href="https://facebook.com/" target="_blank">
+            <img src="obrázky/facebook.png" alt="Facebook logo">
+        </a>
+        <a href="https://www.instagram.com/" target="_blank">
+            <img src="obrázky/instagram.png" alt="Instagram logo">
+        </a>
+    </div>
+</footer>
+</body>
+</html>
