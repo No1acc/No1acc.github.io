@@ -86,7 +86,7 @@ header {
 }
 
 .mobile-menu a {
-    display: none;
+    display: block;
     padding: 10px;
     color: #fff;
     text-decoration: none;
